@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="validation.css">
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <div id="form-container">
+        <form id="booking-form" onsubmit="validateForm(); return false;">
+            <label for="name">Nama Pelanggan:</label>
+            <input type="text" id="name" name="name" required maxlength="30">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="departure-time">Jam Keberangkatan:</label>
+            <input type="time" id="departure-time" name="departure-time" required>
+
+            <label for="destination">Tujuan Keberangkatan:</label>
+            <input type="text" id="destination" name="destination" required>
+
+            <label for="ticket-quantity">Jumlah Tiket:</label>
+            <input type="number" id="ticket-quantity" name="ticket-quantity" required min="1" max="10">
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="result-container" class="hidden">
+            <h2>Informasi Pemesanan:</h2>
+            <p id="result-name"></p>
+            <p id="result-email"></p>
+            <p id="result-departure-time"></p>
+            <p id="result-destination"></p>
+            <p id="result-ticket-quantity"></p>
+        </div>
+    </div>
+    <script src="validation.js"></script>
+</body>
+
+</html>
